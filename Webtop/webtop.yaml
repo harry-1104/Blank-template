@@ -18,9 +18,3 @@ services:
 
     shm_size: "2gb" #optional
     restart: unless-stopped
-    # env_file:
-    #   - .env
-
-
-
-# More info here: https://docs.linuxserver.io/images/docker-webtop
