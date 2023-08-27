@@ -1,0 +1,24 @@
+FROM kalilinux/kali-rolling:latest
+
+# Cài đặt các gói cần thiết
+RUN apt-get update -y \
+    && DEBIAN_FRONTEND=noninteractive && apt-get install -y \
+        kali-desktop-xfce \
+        kali-tools-top10 \
+        kasmvnc \
+        firefox-esr \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
+
+# Thêm vào một số file cấu hình để Kasm VNC hoạt động
+COPY configs /root/.kasm/
+
+# Đặt biến môi trường để sử dụng XFCE
+ENV DESKTOP_SESSION=xfce \
+    XDG_CONFIG_DIRS=/etc/xdg/xdg-xfce:/etc/xdg \
+    XDG_DATA_DIRS=/usr/share/xfce4:/usr/share/xfce4-notifyd:/usr/share/xfce4-panel:/usr/share/xfce4-session:/usr/share/xfwm4
+
+# Chạy Kasm VNC Client khi container được khởi động
+ENTRYPOINT ["kasmvnc"]
+
+EXPOSE 6901

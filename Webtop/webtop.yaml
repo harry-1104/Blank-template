@@ -1,0 +1,26 @@
+# Create a linux desktop
+
+version: "2.1"
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop:ubuntu-kde
+    container_name: webtop
+    privileged: true
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config:/config
+      - /var/run/docker.sock:/var/run/docker.sock #optional
+    ports:
+      - 3000:3000
+
+    shm_size: "2gb" #optional
+    restart: unless-stopped
+    # env_file:
+    #   - .env
+
+
+
+# More info here: https://docs.linuxserver.io/images/docker-webtop
