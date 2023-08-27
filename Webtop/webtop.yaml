@@ -3,7 +3,7 @@
 version: "2.1"
 services:
   webtop:
-    image: lscr.io/linuxserver/webtop:ubuntu-kde
+    image: lscr.io/linuxserver/webtop:arch-kde
     container_name: webtop
     privileged: true
     environment:
