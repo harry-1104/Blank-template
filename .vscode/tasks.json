@@ -6,14 +6,16 @@
         {
             "label": "Compose up",
             "type": "shell",
-            "command": "docker compose -f ${file} up -d",
-            "problemMatcher": []
+            "command": "sudo rm -rf Webtop/config/ && docker compose -f ${file} up -d",
+            "problemMatcher": [],
+            "detail": "Run docker compose up"
         },
         {
             "label": "Compose down",
             "type": "shell",
-            "command": "docker compose -f ${file} down",
-            "problemMatcher": []
-        }
+            "command": "docker compose -f ${file} down && sudo rm -rf Webtop/config/",
+            "problemMatcher": [],
+            "detail": "Run docker compose down"
+        },
     ]
 }
