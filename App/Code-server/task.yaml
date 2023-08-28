@@ -11,7 +11,7 @@ services:
       - PASSWORD=password #optional
       - SUDO_PASSWORD=password #optional
     volumes:
-      - ./appdata-config:/config
+      - ./config:/config
     ports:
       - 8443:8443
     restart: unless-stopped
