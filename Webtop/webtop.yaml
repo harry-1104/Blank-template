@@ -3,7 +3,7 @@
 version: "2.1"
 services:
   webtop:
-    image: lscr.io/linuxserver/webtop:latest
+    image: lscr.io/linuxserver/webtop:ubuntu-mate
     container_name: webtop
     privileged: true
     environment:
