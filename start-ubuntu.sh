@@ -1,5 +1,5 @@
 clear
-echo "[+] Starting ubuntu ..."
+echo "[+] Ubuntu starting ..."
 sudo docker run --name=ubuntu-gnome --rm \
   --tmpfs /run --tmpfs /run/lock --tmpfs /tmp \
   --cgroupns=host --cap-add SYS_BOOT --cap-add SYS_ADMIN \
@@ -8,3 +8,4 @@ sudo docker run --name=ubuntu-gnome --rm \
   darkdragon001/ubuntu-gnome-vnc
 sudo docker rmi darkdragon001/ubuntu-gnome-vnc
 clear
+echo "[+] Ubuntu image deleted"
