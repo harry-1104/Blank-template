@@ -1,5 +1,5 @@
 clear
-echo "[+] Ubuntu session starting ..."
+echo "[+] Ubuntu 20.04 session creating ..."
 sudo docker run --name=ubuntu-gnome --rm \
   --tmpfs /run --tmpfs /run/lock --tmpfs /tmp \
   --cgroupns=host --cap-add SYS_BOOT --cap-add SYS_ADMIN \
@@ -8,4 +8,4 @@ sudo docker run --name=ubuntu-gnome --rm \
   darkdragon001/ubuntu-gnome-vnc
 sudo docker rmi darkdragon001/ubuntu-gnome-vnc
 clear
-echo "[+] Ubuntu session deleted"
+echo "[+] Ubuntu 20.04 session deleted"
